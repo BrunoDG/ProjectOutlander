@@ -20,34 +20,42 @@ class BottomNavigation extends StatelessWidget {
             Icon(Icons.search),
             Transform.translate(
               offset: Offset(0, -15),
-              child: Container(
-                padding: const EdgeInsets.all(13),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Color(0xff92d2ff),
-                      Color(0xff1ebdf8),
+              child: GestureDetector(
+                onTap: () => Navigator.of(context).pushReplacementNamed('/'),
+                child: Container(
+                  padding: const EdgeInsets.all(13),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color(0xff92d2ff),
+                        Color(0xff1ebdf8),
+                      ],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(3, 3),
+                        blurRadius: 3,
+                      ),
                     ],
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      offset: Offset(3, 3),
-                      blurRadius: 3,
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.home,
-                  color: Colors.white,
+                  child: Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
             Icon(Icons.date_range),
-            Icon(Icons.settings),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed('/details');
+              },
+              child: Icon(Icons.settings),
+            ),
           ],
         ),
       ),

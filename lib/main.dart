@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 // Project Outlander Pages
 import 'package:project_outlander/pages/home/home.dart';
+import 'package:project_outlander/pages/details/details.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,10 +24,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: HomePage(),
-      ),
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/': (context) => HomePage(),
+        '/details': (context) => DetailsPage(),
+      },
+      initialRoute: '/',
     );
   }
 }
