@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// Project Outlander Pages
+import 'package:project_outlander/pages/home/home.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Container(),
+        body: HomePage(),
       ),
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
